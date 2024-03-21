@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mia.infrastructure.mapper.IStrategyDetailMapper">
+
+
+    <select id="queryStrategyDetailList" parameterType="java.lang.Long" resultType="mia.infrastructure.vo.StrategyDetail">
+        SELECT id, strategyId, awardId, awardCount, awardSurplusCount,
+               awardRate, createTime, updateTime
+        FROM strategy_detail
+        WHERE strategyId = #{strategyId}
+    </select>
+
+    <update id="deductStock" parameterType="mia.infrastructure.vo.StrategyDetail">
+        UPDATE strategy_detail SET awardSurplusCount = awardSurplusCount - 1
+        WHERE strategyId = #{strategyId} AND awardId = #{awardId} AND awardSurplusCount > 0
+    </update>
+
+</mapper>

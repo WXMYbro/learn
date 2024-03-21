@@ -1,0 +1,30 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://120.46.186.60:3306/lottery?characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai&useLegacyDatetimeCode=false&nullCatalogMeansCurrent=true
+    username: root
+    password: Dev123%^
+
+mybatis-plus:
+  configuration:
+    default-fetch-size: 30000
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    #    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+  mapper-locations: classpath*:/mybatis/mapper/*.xml
+
+
+
+
+# Dubbo 广播方式配置
+dubbo:
+  application:
+    name: dubbo-springboot-demo-provider
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: zookeeper://${zookeeper.address:120.46.186.60}:2181
+
+
