@@ -1,4 +1,4 @@
-package mia.infrastructure.repository;
+package mia.strategy.repository.Impl;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
@@ -10,17 +10,13 @@ import mia.infrastructure.vo.Strategy;
 import mia.infrastructure.vo.StrategyDetail;
 import mia.strategy.model.aggregates.StrategyRich;
 import mia.strategy.repository.IStrategyRepository;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import java.util.List;
 
-/**
- * 博客：https://bugstack.cn - 沉淀、分享、成长，让自己和他人都能有所收获！
- * 公众号：bugstack虫洞栈
- * Create by 小傅哥(fustack)
- */
-@Service
+
+@Component
 public class StrategyRepository implements IStrategyRepository {
 
     @Resource

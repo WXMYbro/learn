@@ -1,4 +1,4 @@
-package mia.infrastructure.repository;
+package mia.award.repository.Impl;
 
 
 import mia.award.repository.IAwardRepository;

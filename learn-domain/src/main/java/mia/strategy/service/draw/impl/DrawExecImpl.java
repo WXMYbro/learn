@@ -7,7 +7,6 @@ import mia.infrastructure.vo.StrategyDetail;
 import mia.strategy.repository.IStrategyRepository;
 import mia.strategy.service.algorithm.IDrawAlgorithm;
 import mia.strategy.service.draw.AbstractDrawBase;
-import mia.strategy.service.draw.DrawBase;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -22,9 +21,6 @@ public class DrawExecImpl extends AbstractDrawBase {
 
     @Resource
     private IStrategyRepository strategyRepository;
-
-    @Resource
-    private DrawBase drawBase;
 
     @Resource
     private IStrategyDetailDao iStrategyDetailDao;

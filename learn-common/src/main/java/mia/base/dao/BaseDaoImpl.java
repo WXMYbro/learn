@@ -13,10 +13,7 @@ import java.io.Serializable;
 import java.lang.reflect.Field;
 import java.util.List;
 
-/**
- * @author lqa
- * @since 2022-06-02 19:50:10
- */
+
 @Slf4j
 public class BaseDaoImpl<M extends BaseMapper<T>, T> extends ServiceImpl<M, T> implements IBaseDao<T> {
 
@@ -57,9 +54,7 @@ public class BaseDaoImpl<M extends BaseMapper<T>, T> extends ServiceImpl<M, T> i
 
     @Override
     public Long countFieldSize(SFunction<T, ?> field, Object value) {
-        LambdaQueryWrapper<T> wrapper = new LambdaQueryWrapper<>();
-        wrapper.eq(field, value);
-        return baseMapper.selectCount(wrapper);
+        return null;
     }
 
     @Override

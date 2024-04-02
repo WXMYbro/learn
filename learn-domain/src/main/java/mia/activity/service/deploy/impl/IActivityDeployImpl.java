@@ -8,11 +8,13 @@ import mia.activity.model.vo.StrategyDetailVO;
 import mia.activity.model.vo.StrategyVO;
 import mia.activity.repository.IActivityRepository;
 import mia.activity.service.deploy.IActivityDeploy;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
 
+@Service
 public class IActivityDeployImpl implements IActivityDeploy {
 
     @Resource

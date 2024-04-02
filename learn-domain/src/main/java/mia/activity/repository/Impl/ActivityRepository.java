@@ -1,4 +1,4 @@
-package mia.infrastructure.repository;
+package mia.activity.repository.Impl;
 
 import mia.activity.model.vo.ActivityVO;
 import mia.activity.model.vo.AwardVO;
@@ -18,10 +18,12 @@ import mia.infrastructure.vo.Award;
 import mia.infrastructure.vo.Strategy;
 import mia.infrastructure.vo.StrategyDetail;
 import org.springframework.beans.BeanUtils;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import java.util.List;
 
+@Component
 public class ActivityRepository implements IActivityRepository {
 
     @Resource

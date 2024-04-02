@@ -1,5 +1,9 @@
 package mia.common;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.io.Serializable;
 
 /**
@@ -9,12 +13,40 @@ import java.io.Serializable;
  *
  * 统一返回对象中，Code码、Info描述
  */
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Result implements Serializable {
 
     private static final long serialVersionUID = -3826891916021780628L;
+
     private String code;
+
+    private String msg;
+
     private String info;
 
+    private Object data;
+
+
+    /**
+     * 成功返回结果
+     */
+    public static Result success() {
+        return new Result("",
+                ResultEnum.SUCCESS.getMsg(),
+                null,null);
+    }
+
+    /**
+     * 成功返回结果
+     *
+     * @param data 数据内容
+     */
+    public static Result success(Object data) {
+        return new Result("",
+                ResultEnum.SUCCESS.getMsg(),null,data);
+    }
 
     public static Result buildResult(String code, String info) {
         return new Result(code, info);
